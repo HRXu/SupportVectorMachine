@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVM", "ConsoleApp1\SVM.csproj", "{E229912D-A7DA-4EC7-89AC-5B4A7001B11A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HxmMarix", "HxmMarix\HxmMarix.csproj", "{B5444D26-05AA-4600-BF7A-BB42172C9AB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "matrixCalculator", "matrixCalculator\matrixCalculator.csproj", "{68F83FC3-643A-49A6-9201-06DBBA4B3620}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E229912D-A7DA-4EC7-89AC-5B4A7001B11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E229912D-A7DA-4EC7-89AC-5B4A7001B11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E229912D-A7DA-4EC7-89AC-5B4A7001B11A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5444D26-05AA-4600-BF7A-BB42172C9AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5444D26-05AA-4600-BF7A-BB42172C9AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5444D26-05AA-4600-BF7A-BB42172C9AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5444D26-05AA-4600-BF7A-BB42172C9AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F83FC3-643A-49A6-9201-06DBBA4B3620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F83FC3-643A-49A6-9201-06DBBA4B3620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F83FC3-643A-49A6-9201-06DBBA4B3620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F83FC3-643A-49A6-9201-06DBBA4B3620}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

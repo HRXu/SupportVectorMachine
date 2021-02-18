@@ -48,7 +48,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Simplifiedsmo.cs" />
+    <Compile Include="SimplifiedSmo.cs" />
+    <Compile Include="SimplifiedSmo.IO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

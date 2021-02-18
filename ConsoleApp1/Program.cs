@@ -8,7 +8,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             SimplifiedSmo s = new SimplifiedSmo();//构造函数里内嵌训练数据
-            s.InitTrainSet().train();
+            s.InitTrainSet("train.txt").Train();
             //testSet
             double[][] x2 = new double[20][];
             x2[0] = new double[2] {9.015509,0.345019 };

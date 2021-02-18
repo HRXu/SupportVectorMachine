@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,40 @@ namespace ConsoleApp1
 {
     public class SimplifiedSmo
     {
-        public SimplifiedSmo()
+
+        public SimplifiedSmo InitTrainSet(string path)
+        {
+            LoadDataSet(path, out this.x, out this.y);
+            return this;
+        }
+
+        public SimplifiedSmo InitTestSet(string path, out double[][] x,out int[] y)
+        {
+            LoadDataSet(path, out x, out y);
+            return this;
+        }
+
+        void LoadDataSet(string path, out double[][] x,out int[] y)
+        {
+            StreamReader sw = new StreamReader(new FileStream(path, FileMode.Open));
+
+            string s = sw.ReadLine();
+            int count = Convert.ToInt32(s);
+            x = new double[count][];
+            y = new int[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                var tmp = sw.ReadLine().Split('t', ' ');
+                x[i] = new double[2];
+                x[i][0] = Convert.ToDouble(tmp[0]);
+                x[i][1] = Convert.ToDouble(tmp[0]);
+                y[i] = Convert.ToInt32(tmp[0]);
+            }
+            sw.Close();
+        }
+
+        public SimplifiedSmo InitTrainSet()
         {
             //training set
             x = new double[80][];
@@ -118,6 +152,7 @@ namespace ConsoleApp1
 
                 -1, 1, 1,-1,-1, 1,-1, 1, 1, 1
             };
+            return this;
         }
 
         private HashSet<int> boundAlpha = new HashSet<int>();//boundAlpha表示x点处于边界上所对应的拉格朗日乘子a的集合
@@ -137,7 +172,7 @@ namespace ConsoleApp1
             {
                 kernel[i] = new double[x.Length];
             }
-            initiateKernel(x.Length);
+            InitiateKernel(x.Length);
 
             double C = 1; //对不在界内的惩罚因子
             double tol = 0.0125;//容忍极限值
@@ -272,7 +307,7 @@ namespace ConsoleApp1
             return maxIndex;
         }
 
-        public double predict(double[][] x2, int[] y2)
+        public double Predict(double[][] x2, int[] y2)
         {
             double probability = 0;
             int correctCnt = 0;
@@ -303,7 +338,7 @@ namespace ConsoleApp1
             return probability;
         }
 
-        public void userPredict(double x1, double x2)
+        public void Predict(double x1, double x2)
         {
             int len = y.Length;
             double sum = 0;
@@ -325,7 +360,7 @@ namespace ConsoleApp1
 
         }
 
-        private void initiateKernel(int length)
+        private void InitiateKernel(int length)
         {
             for (int i = 0; i < length; i++)
             {

@@ -8,7 +8,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             SimplifiedSmo s = new SimplifiedSmo();//构造函数里内嵌训练数据
-            s.train();
+            s.InitTrainSet().train();
             //testSet
             double[][] x2 = new double[20][];
             x2[0] = new double[2] {9.015509,0.345019 };
@@ -38,7 +38,7 @@ namespace ConsoleApp1
                 1,1,1,1,-1,-1,-1,-1,1,-1,
                 1,1,1,-1,-1,-1,-1,-1,-1,-1
             };        
-            Console.WriteLine("训练完成\n内置数据正确率：{0}", s.predict(x2, y2));
+            Console.WriteLine("训练完成\n预测集数据正确率：{0}", s.Predict(x2, y2));
             while (true)
             {
                 Console.WriteLine("输入你要预测的数据：（输一个然后回车）");
@@ -46,7 +46,7 @@ namespace ConsoleApp1
                 {
                     var first=Convert.ToDouble(Console.ReadLine());
                     var sec =Convert.ToDouble(Console.ReadLine());
-                    s.userPredict(first, sec);
+                    s.Predict(first, sec);
                 }
                 catch (FormatException)
                 {

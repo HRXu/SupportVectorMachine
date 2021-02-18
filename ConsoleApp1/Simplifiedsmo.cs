@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class SVMcore
+    public class SimplifiedSmo
     {
-        public SVMcore()
+        public SimplifiedSmo()
         {
             //training set
             x = new double[80][];
@@ -123,8 +123,8 @@ namespace ConsoleApp1
         private HashSet<int> boundAlpha = new HashSet<int>();//boundAlpha表示x点处于边界上所对应的拉格朗日乘子a的集合
         private Random random = new Random();
 
-        public double[][] x;//trainingSet
-        private double[][] kernel; // 核
+        public double[][] x;
+        public double[][] kernel; // 核
 
         public double[] a;//拉格朗日乘子
         public int[] y;
@@ -132,16 +132,16 @@ namespace ConsoleApp1
 
         public void train()
         {
-            kernel = new double[80][];
+            kernel = new double[x.Length][];
             for (int i = 0; i < kernel.Length; i++)
             {
-                kernel[i] = new double[80];
+                kernel[i] = new double[x.Length];
             }
             initiateKernel(x.Length);
 
             double C = 1; //对不在界内的惩罚因子
             double tol = 0.0125;//容忍极限值
-            int maxPasses = 5; //没有改变拉格朗日乘子的最多迭代次数
+            int maxPasses = 6; //没有改变拉格朗日乘子的最多迭代次数
 
             double[] a = new double[x.Length];//拉格朗日乘子
             this.a = a;
@@ -368,6 +368,7 @@ namespace ConsoleApp1
             return j;
         }
 
+
         private double f(int j)
         {
             double sum = 0;
@@ -383,6 +384,6 @@ namespace ConsoleApp1
         {
             return f(i) - y[i];
         }
-
     }
+
 }

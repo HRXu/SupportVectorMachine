@@ -31,7 +31,7 @@ namespace ConsoleApp1
 
             for (int i = 0; i < count; i++)
             {
-                var tmp = sw.ReadLine().Split('\t', ' ');
+                var tmp = sw.ReadLine().Split('\t', ' ',',');
                 x[i] = new double[2];
                 x[i][0] = Convert.ToDouble(tmp[0]);
                 x[i][1] = Convert.ToDouble(tmp[1]);
